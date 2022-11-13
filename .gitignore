@@ -1,17 +1,5 @@
 # Git 忽略文件
-temp/
-coverage_report_html/
-
-*.7z
-*.zip
-*.db
-*.dat
-# *.csv
-*.xlsx
-*.jpg
-*.png
-*.cfg
-*.conf
+__version__.py
 
 # ---------------------------------------------
 # 参考：https://github.com/github/gitignore/blob/main/Python.gitignore

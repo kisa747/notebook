@@ -1,0 +1,15 @@
+# requirements_dev.txt
+# 开发依赖
+# Window下安装错误需要设置设置环境变量 PYTHONUTF8 为 1 。
+# 运行命令：setx PYTHONUTF8 1
+
+xlwings
+
+pip
+setuptools
+wheel
+build
+mypy
+pytest
+pytest-cov
+tox

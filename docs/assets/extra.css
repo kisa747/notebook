@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Source Han Serif SC","Source Han Sans SC","Noto Sans CJK SC","Microsoft Yahei","sans";
+}
+
+:root {
+  --md-text-font: "Source Han Serif SC","Source Han Sans SC","Noto Sans CJK SC","Microsoft Yahei","sans";
+}
+

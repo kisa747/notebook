@@ -1,13 +1,13 @@
-# Usage
+# pyexcel
 
 一个基于 xlwings 库，处理Excel文件的工具。
 
-要求：Python 3.9+。
+要求：Python 3.10+
 
 ## 安装
 
 ```sh
-python -m pip install git+https://gitee.com/kisa747/pyexcel@1.0.0
+python -m pip install git+https://github.com/kisa747/pyexcel@0.1.0
 ```
 
 ## 快速手册
@@ -44,13 +44,13 @@ with pyexcel.Excel('test.xlsx') as ex:
 
 ```python
 # 批量转换为 xlsx 文件
-pyexcel.convert(r'D:\test', to_xlsx)
+pyexcel.convert(r'D:\test', 'to_xlsx')
 
 # 批量转换为 pdf 文件
-pyexcel.convert(r'D:\test', to_xlsx)
+pyexcel.convert(r'D:\test', 'to_xlsx')
 
 # 批量去除所有公式
-pyexcel.convert(r'D:\test', drop_formula)
+pyexcel.convert(r'D:\test', 'drop_formula')
 ```
 
 ### 合并 excel 文件
@@ -65,3 +65,37 @@ pyexcel.merge(r'D:\test')
 pyexcel.split('test.xlsx')
 ```
 
+-------------
+
+[Read the documentation on ReadTheDocs!](https://kisa747.readthedocs.io/zh_CN/latest/)
+
+-------------
+
+# 开发指南
+
+1. 创建虚拟环境。
+
+2. 安装依赖。
+
+```shell
+pip insatall requirements.txt
+```
+
+3. 测试
+
+```shell
+# 静态类型检查
+mypy
+
+# 代码测试
+pytest
+
+# 代码测试、代码覆盖率测试
+tox
+
+# 打包创建 wheel 文件
+python -m build -w
+
+# 或是使用 tox 打包创建 wheel 文件
+tox -e build
+```
