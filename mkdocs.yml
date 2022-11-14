@@ -26,13 +26,8 @@ theme:
     # 搜索关键字高亮
     - search.highlight
 
-  # light、dark 模式切换
+  # 根据系统设置切换 light、dark 模式
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -46,7 +41,7 @@ theme:
       scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to light mode
 
 extra:
   social:

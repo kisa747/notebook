@@ -5,8 +5,10 @@
 """
 __author__ = 'kevin'
 __date__ = '2021/2/3'
-
-from .__version__ import __version__, __version_tuple__
+try:
+    from .__version__ import __version__, __version_tuple__
+except ImportError:
+    __version__, __version_tuple__ = '0.1.0', (0, 1, 0)
 from .converts import convert  # 转换 excel 文件
 from .excel import Excel
 from .utils import merge, split
