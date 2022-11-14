@@ -1,6 +1,4 @@
-| Name | stat                                                         |
-| :--: | ------------------------------------------------------------ |
-| Docs | [![Documentation Status](https://readthedocs.org/projects/kisa747/badge/?version=latest)](https://kisa747.readthedocs.io/zh_CN/latest/?badge=latest) |
+[![Documentation Status](https://readthedocs.org/projects/kisa747/badge/?version=latest)](https://kisa747.readthedocs.io/zh_CN/latest/?badge=latest)
 
 # 概述
 

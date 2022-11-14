@@ -79,6 +79,13 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+  # 扩展语法支持
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
 extra_javascript:
   # 支持公式需要的 js
   - javascripts/mathjax.js
