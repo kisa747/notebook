@@ -48,16 +48,20 @@ include = '\.py[iw]?$'
 # mypy配置
 [tool.mypy]
 ignore_missing_imports = true
-
+# Disables using type information in installed packages (see PEP 561).
+# This will also disable searching for a usable Python executable.
+# 不检查已安装的包
+no_site_packages = true
 
 # pytest配置
 [tool.pytest.ini_options]
 #addopts = "-ra -q --strict-config --strict-markers --cov --cov-report html"
-addopts = "-ra"
+addopts = "-ra -p no:faulthandler"
 # 源码目录
 pythonpath = "src"
 # 测试目录
 testpaths = "tests"
+
 
 
 # coverage配置
@@ -95,20 +99,40 @@ legacy_tox_ini = """
 [tox]
 # 根据官方文档，使用setuptools打包，必须设置隔离环境
 isolated_build = True
-envlist = py310
+envlist = python310,python311
+
 
 [testenv]
-description = Run the tests with pytest under {basepython}
+description = 在多个python环境下测试
+deps =
+    pytest
+# 此处参数会将 [pytest] addopts 配置覆盖掉
+commands = pytest -p no:faulthandler
+
+
+# 使用 tox -e no-cov 命令执行
+[testenv:no-cov]
+description = 不生成报告，使用pytest测试
+basepython = python311
+deps =
+    pytest
+commands = pytest -p no:faulthandler
+
+
+# 使用 tox -e cov 命令执行
+[testenv:cov]
+description = 生成报告，使用pytest测试
+basepython = python310
 deps =
     pytest
     pytest-cov
-# 此处参数会将 [pytest] addopts 配置覆盖掉
-commands = pytest --cov --cov-report html
+commands = pytest -p no:faulthandler --cov --cov-report=html
+
 
 # 使用 tox -e build 命令执行
 [testenv:build]
 description = 构建 whl 安装包
-basepython = py310
+basepython = python310
 deps =
     setuptools>=61.0
     build>=0.9
