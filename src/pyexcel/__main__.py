@@ -20,15 +20,15 @@ def main():
 
     Examples
     --------
-    将目录内的所有 xls 文件批量转换为 xlsx 文件，导出至 "D:\Excel_xlsx"
-    python -m pyexcel --xlsx "D:\Excel"
+    将目录内的所有 xls 文件批量转换为 xlsx 文件，导出至 "D:\\Excel_xlsx"
+    python -m pyexcel --xlsx "D:\\Excel"
     将指定的 xls 文件转换为 xlsx 文件，导出至文件同目录
-    python -m pyexcel --xlsx "D:\test.xls"
+    python -m pyexcel --xlsx "D:\\test.xls"
 
-    将目录内的所有 xlsx 文件批量导出为 pdf 文件，导出至 "D:\Excel_pdf"
-    python -m pyexcel --pdf "D:\Excel"
+    将目录内的所有 xlsx 文件批量导出为 pdf 文件，导出至 "D:\\Excel_pdf"
+    python -m pyexcel --pdf "D:\\Excel"
     将指定的 xlsx 文件导出为 pdf 文件，导出至文件同目录
-    python -m pyexcel --pdf  "D:\test.xls"
+    python -m pyexcel --pdf  "D:\\test.xls"
 
     :return: None
     """

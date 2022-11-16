@@ -43,14 +43,28 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+
+plugins:
+  #  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [ src ]  # search packages in the src folder
+          options:
+            show_root_heading: true
+            docstring_style: "sphinx"
+
+
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kisa747
 
+
 # 加载额外的 css 样式
 extra_css:
   - assets/extra.css
+
 
 # 是否显示 Made with Material for MkDocs
 #generator: false
@@ -65,6 +79,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  #  - mkautodoc
 
   # 代码标题支持
   - pymdownx.highlight:

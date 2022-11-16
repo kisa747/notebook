@@ -17,11 +17,7 @@ class Excel:
     """
     创建一个 xlwings.app() 实例，支持上下文管理。
 
-    Examples
-    --------
-    with Excel() as excel:
-        excel.to_pdf(Path('E:/_test/Excel/_test.xlsx'), Path('E:/_test/Excel/_test.pdf'))
-
+    :param xls_path: 要处理的 excel 文件路径
     """
 
     def __init__(self, xls_path: str | Path):
@@ -45,7 +41,13 @@ class Excel:
         # only releases the Excel process if there are no more references to it from Python.
         # This means, you'd either need to del app at the end of your code or use app.kill() instead.
 
-    def to_xlsx(self, xlsx_path: str | Path):
+    def to_xlsx(self, xlsx_path: str | Path) -> None:
+        """
+        转换成 xlsx
+
+        :param xlsx_path: 要处理的excel文件
+        :return: None
+        """
         utils.to_xlsx(self.wb, xlsx_path)
 
     def to_pdf(self, pdf_path: str | Path, ziliao=False):
