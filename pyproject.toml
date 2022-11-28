@@ -53,15 +53,15 @@ ignore_missing_imports = true
 # 不检查已安装的包
 no_site_packages = true
 
+
 # pytest配置
 [tool.pytest.ini_options]
 #addopts = "-ra -q --strict-config --strict-markers --cov --cov-report html"
 addopts = "-ra -p no:faulthandler"
 # 源码目录
-pythonpath = "src"
+pythonpath = ["src"]
 # 测试目录
-testpaths = "tests"
-
+testpaths = ["tests"]
 
 
 # coverage配置
@@ -70,6 +70,8 @@ testpaths = "tests"
 branch = true
 # .coverage文件位置
 data_file = ".pytest_cache/.coverage"
+# 不使用 pytest-cov 插件，需要设置此参数
+source = ["src"]
 # 代码覆盖测试要排除的文件
 omit = ['tests/__init__\.py']
 [tool.coverage.report]
@@ -99,6 +101,7 @@ legacy_tox_ini = """
 [tox]
 # 根据官方文档，使用setuptools打包，必须设置隔离环境
 isolated_build = True
+# scoop 配置的python，不能使用简称
 envlist = python310,python311
 
 
@@ -107,7 +110,7 @@ description = 在多个python环境下测试
 deps =
     pytest
 # 此处参数会将 [pytest] addopts 配置覆盖掉
-commands = pytest -p no:faulthandler
+commands = pytest -s -p no:faulthandler
 
 
 # 使用 tox -e no-cov 命令执行

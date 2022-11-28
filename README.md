@@ -68,13 +68,7 @@ pyexcel.merge(r'D:\test')
 pyexcel.split('test.xlsx')
 ```
 
--------------
-
-[Read the documentation on ReadTheDocs!](https://kisa747.readthedocs.io/zh_CN/latest/)
-
--------------
-
-# 开发指南
+## 开发指南
 
 1. 创建虚拟环境。
 
