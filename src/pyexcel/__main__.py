@@ -10,8 +10,7 @@ import argparse
 import logging
 
 from .converts import convert
-from .utils import merge
-from .utils import split
+from .utils import merge, split
 
 
 def main():

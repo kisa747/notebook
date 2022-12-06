@@ -28,7 +28,7 @@ class Excel:
     def __enter__(self, *args, **kwargs):  # 上下文管理，进入时执行
         return self  # 返回的对象为 as 后的变量。
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self):
         self.close()
 
     def close(self):
