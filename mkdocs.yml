@@ -25,6 +25,8 @@ theme:
     - navigation.tabs.sticky
     # 搜索关键字高亮
     - search.highlight
+    # 底部导航箭头
+    - navigation.footer
 
   # 根据系统设置切换 light、dark 模式
   palette:

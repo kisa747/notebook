@@ -82,7 +82,7 @@ pip insatall requirements.txt
 
 ```shell
 # 静态类型检查
-mypy
+mypy .
 
 # 代码测试
 pytest
