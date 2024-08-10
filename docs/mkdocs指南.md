@@ -1,6 +1,6 @@
 # MkDocs指南
 
-## 安装
+## 安装MkDocs
 
 参考 readthedocs 的 [MkDocs指南](https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html) 、[MkDocs文档](https://www.mkdocs.org/user-guide/)
 
@@ -9,8 +9,6 @@
 ```sh
 # 安装 mkdocs 库
 pip install mkdocs
-# 安装 material 主题，非常漂亮，而且支持暗黑模式。
-pip install mkdocs-material
 ```
 
 创建项目，在项目目录 `D:\Project` 下执行以下操作：
@@ -31,11 +29,34 @@ D:\Project
         requirements.txt  # ReadtheDocs 需要的依赖文件，必须。
 ```
 
-运行以下命令，在浏览器中打开 <http://127.0.0.1:8000> 实时预览。
+readthedocs配置文件 `.readthedocs.yaml ` 内容：
+
+```yaml
+# Read the Docs configuration file for MkDocs projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the version of Python and other tools you might need
+build:
+  os: ubuntu-lts-latest
+  tools:
+    python: latest
+
+mkdocs:
+  configuration: mkdocs.yml
+
+# Optionally declare the Python requirements required to build your docs
+python:
+  install:
+  - requirements: docs/requirements.txt
+```
+
+运行以下命令，然后在浏览器中打开 <http://127.0.0.1:8000> 实时预览。
 
 ```sh
-mkdocs serve
-# 实时监控主题修改变化
+# 建议加上 --watch-theme 参数，实时监控主题修改变化
 mkdocs serve --watch-theme
 ```
 
@@ -49,7 +70,7 @@ mkdocs build
 
 [Material for MkDocs 主题文档](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
-使用 pip 安装：
+安装 material 主题，非常漂亮，而且支持暗黑模式。
 
 ```sh
 pip install mkdocs-material
